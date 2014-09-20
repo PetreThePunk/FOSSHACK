@@ -1,4 +1,4 @@
 FOSSHACK
 ========
 
-A game for the Mozilla Firefox
+A game for the Mozilla FirefoxOS
