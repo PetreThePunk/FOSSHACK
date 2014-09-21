@@ -16,3 +16,9 @@ p {
   font-size: inherit;
 }
 
+#playButton button{
+	position: absolute;
+	margin-left: 220px;
+	margin-top: -300px;
+}
+
