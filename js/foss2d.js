@@ -50,7 +50,7 @@ var Foss2D = {
 					}
 					break;
 
-				arrayBlox[i].falling = falling;
+				bloxArray[i].falling = falling;
 			}
 		}
 	},
