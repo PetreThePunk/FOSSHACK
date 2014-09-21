@@ -24,7 +24,7 @@ function init() {
 		FossBlox.grid.cells[i] = -1;
 	}
 	
-	//test array case
+	//test case
 	FossBlox.bloxArray.push( { falling: true, cell: 0 }, { falling: true, cell: 1 }, { falling: true, cell: 2 }, { falling: true, cell: 26 }, { falling: true, cell: 51 } );
 	
 	// Set up canvas element and context
@@ -37,7 +37,7 @@ function init() {
 			case 40:
 				FossBlox.direction = 0;
 				break;
-			case 36:
+			case 39:
 				FossBlox.direction = 1;
 				break;
 			case 38:
