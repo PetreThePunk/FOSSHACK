@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <title>Privileged app</title>
         <meta name="description" content="A privileged app stub">
-        <meta name="authors" content="Cailin Li, David Kisluk, Peter Gyory, Will Paul"/>
+        <meta name="authors" content="Cailin Li, David Kisluk, Peter Gyory, Will Paul, Reuben Brenner-Adams"/>
       
         <link rel="stylesheet" type="text/css" href="css/app.css"/>
 
@@ -32,9 +32,10 @@
         Read about defer: https://developer.mozilla.org/Web/HTML/Element/script#attr-defer
         -->
         <script type="text/javascript" src="js/app.js" defer></script>
-		<script type="text/javascript" src="js/foss2d.js" defer></script>
-		<script type="text/javascript" src="js/states.js" defer></script>
-		<script type="text/javascript" src="js/main.js" defer></script>
+<!--         <script type="text/javascript" src="js/foss2d.js" defer></script>
+        <script type="text/javascript" src="js/states.js" defer></script>
+        <script type="text/javascript" src="js/main.js" defer></script> -->
+      
         <!--
         The following two lines are for loading the localisations library
         and the localisation data-so people can use the app in their
@@ -44,15 +45,18 @@
         <script type="text/javascript" src="js/libs/l10n.js" defer></script>
     </head>
     <body>
-      <canvas id="canvas" style="border: 1px solid #bbb;"></canvas>
+      
+<!--       <canvas id="canvas" style="border: 1px solid #bbb;"></canvas> -->
+      <div id="main">
       <section id="mainMenu">
         <p>
-          <button type="button" id="playButton">Play</button>
+          <a href="fossblox.html"><button type="button" id="playButton">Play</button></a>
         </p>
         <p>
-          <button type="button" id="optionsButton">Options</button>
+          <a href="fossblox.html"><button type="button" id="optionsButton">Options</button></a>
         </p>
       </section>
+      
       <section id="optionsMenu">
         <p>
           <label for="speedSlider">Falling Speed</label>
@@ -70,6 +74,7 @@
           <button type="button" id="resumeButton">Resume</button>
         </p>
       </section>
+      
       <section id="gameOver">
         <p id="score">
           Score:
@@ -78,5 +83,6 @@
           <button type="button" id="mainMenuButton">Main Menu</button>
         </p>
       </section>
+      </div>
     </body>
 </html>
