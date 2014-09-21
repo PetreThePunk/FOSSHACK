@@ -25,11 +25,29 @@ function init() {
 	}
 	
 	//test array case
-	FossBlox.bloxArray.push( { falling: true, cell: 0 }, { falling: true, cell: 1 }, { falling: true, cell: 2 }, { falling: true, cell: 26 } );
+	FossBlox.bloxArray.push( { falling: true, cell: 0 }, { falling: true, cell: 1 }, { falling: true, cell: 2 }, { falling: true, cell: 26 }, { falling: true, cell: 51 } );
 	
 	// Set up canvas element and context
 	canvas = document.querySelector("#canvas");
 	ctx = canvas.getContext("2d");
+	
+	//Set up control events
+	window.onkeydown = function(event) {
+		switch( event.keyCode ) {
+			case 40:
+				FossBlox.direction = 0;
+				break;
+			case 36:
+				FossBlox.direction = 1;
+				break;
+			case 38:
+				FossBlox.direction = 2;
+				break;
+			case 37:
+				FossBlox.direction = 3;
+				break;
+		}
+	};
 	
 	main(); // start the cycle
 };
