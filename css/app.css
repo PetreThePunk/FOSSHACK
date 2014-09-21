@@ -47,3 +47,32 @@ p {
   background-position: left top;
   background-attachment: fixed;
 }
+
+#playButton {
+  position: relative;
+  top: 112px;
+  left: 200px;
+}
+
+#playImage {
+  width: 90px;
+}
+
+#playButton:hover, #optionsButton:hover {
+  opacity: 0.6;
+  -webkit-transition: opacity 0.2s linear;
+  -moz-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  -ms-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+#optionsButton {
+  position: relative;
+  left: 105px;
+  top: 205px;
+}
+
+#optionsImage {
+  width: 60px;
+}

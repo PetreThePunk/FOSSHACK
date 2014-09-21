@@ -44,20 +44,19 @@
         <link rel="prefetch" type="application/l10n" href="data/locales.ini" />
         <script type="text/javascript" src="js/libs/l10n.js" defer></script>
     </head>
+  
     <body>
-      
-<!--       <canvas id="canvas" style="border: 1px solid #bbb;"></canvas> -->
+     
       <div id="main">
-      <section id="mainMenu">
-        <p>
-          <a href="fossblox.html"><button type="button" id="playButton">Play</button></a>
-        </p>
-        <p>
-          <a href="fossblox.html"><button type="button" id="optionsButton">Options</button></a>
-        </p>
-      </section>
+        <a href="fossblox.html" id="playButton">
+          <img src="img/play_button.png" id="playImage" />
+        </a>
+
+        <a href="fossblox.html" id="optionsButton" >
+          <img src="img/settings_button.png" id="optionsImage" />
+        </a>
       
-      <section id="optionsMenu">
+<!--       <section id="optionsMenu">
         <p>
           <label for="speedSlider">Falling Speed</label>
           <input id="speedSlider" type="range" min="1" max="5" step="1" value="1"/>
@@ -82,7 +81,8 @@
         <p>
           <button type="button" id="mainMenuButton">Main Menu</button>
         </p>
-      </section>
+      </section> -->
+        
       </div>
     </body>
 </html>
