@@ -1,5 +1,9 @@
 
 var Foss2D = {
+	cellToRowColumn: function( cell, grid ) {
+		
+		
+	},
 	/** Checks for blox that have reached the "bottom" and sets their falling attribute to false
 	 *
 	 * @param bloxArray : array of bloxen to check collisions on
@@ -28,6 +32,7 @@ var Foss2D = {
 					    cell++) { 				
 						if( grid.cells[cell] == -1 ) {
 							falling = true;
+							break;
 						}
 					} 
 					break;
@@ -46,6 +51,7 @@ var Foss2D = {
 					    cell--) {
 						if( grid.cells[cell] == -1 ) {
 							falling = true;
+							break;
 						}
 					}
 					break;
