@@ -15,10 +15,11 @@ var Foss2D = {
 
 				case 0:
 					for(var cell = bloxArray[i].cell;
-                                            cell < grid.cells.length && falling == false; 
-                                            cell += grid.columns) {
+                        cell < grid.cells.length; 
+                        cell += grid.columns) {
 						if( grid.cells[cell] == -1 ) {
 							falling = true;
+							break;
 						}
 					}
 					break;
@@ -37,11 +38,12 @@ var Foss2D = {
 					break;
 				case 2:
 					for(var cell = bloxArray[i].cell;
-					    cell >= 0 && falling == false;
+					    cell >= 0;
 					    cell -= grid.columns) {
 						if( grid.cells[cell] == -1 ) {
-							console.log(pos);
+
 							falling = true;
+							break;
 						}
 					}
 					break;
@@ -84,31 +86,36 @@ var Foss2D = {
 					// Directions relative to initial orientation
 					// Down
 					case 0: 
-						grid.cells[blox.cell] = -1;
 						blox.cell += grid.columns;
 						grid.cells[blox.cell] = i;
 						break;
 					// Right
 					case 1: 
-						grid.cells[blox.cell] = -1;
 						blox.cell += 1;
 						grid.cells[blox.cell] = i;
 						break;
 					// Up
 					case 2: 
-						grid.cells[blox.cell] = -1;
 						blox.cell -= grid.columns;
 						grid.cells[blox.cell] = i;
 						break;
 					// Left
 					case 3: 
-						grid.cells[blox.cell] = -1;
 						blox.cell -= 1;
 						grid.cells[blox.cell] = i;
 						break;
 				}
 			}
-
 		}
+	},
+	fixGrid: function( bloxArray, grid ) {
+		
+		for( var i = 0; i < grid.cells.length; i++ ) {
+				grid.cells[i] = -1;
+		}
+		for( var i = 0; i < bloxArray.length; i++ ) {
+			grid.cells[bloxArray[i].cell] = i;
+		}
+		
 	}
 };

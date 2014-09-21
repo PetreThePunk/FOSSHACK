@@ -25,7 +25,8 @@ function init() {
 	}
 	
 	//test case
-	FossBlox.bloxArray.push( { falling: true, cell: 0 }, { falling: true, cell: 1 }, { falling: true, cell: 2 }, { falling: true, cell: 26 }, { falling: true, cell: 51 } );
+	FossBlox.bloxArray.push( { falling: true, cell: 0, color: "orange" }, { falling: true, cell: 1, color: "green" }, 
+								{ falling: true, cell: 2, color: "purple" }, { falling: true, cell: 18, color: "blue" }, { falling: true, cell: 34, color: "orange" } );
 	//FossBlox.bloxArray.push( { falling: true, cell: 0 } );
 	// Set up canvas element and context
 	canvas = document.querySelector("#canvas");
@@ -79,7 +80,7 @@ function render() {
 				
 				console.log( );
 				
-				ctx.fillStyle = "white";
+				ctx.fillStyle = FossBlox.bloxArray[i].color;
 				ctx.fillRect( drawX, drawY, bloxWidth, bloxHeight );
 			}
 			break;

@@ -3,8 +3,12 @@ function mainMenu( tFrame ) {
 };
 
 function gameScreen( tFrame ) {
+	
 	Foss2D.collide( FossBlox.bloxArray, FossBlox.grid, FossBlox.direction );
+	
 	Foss2D.applyPhysics( FossBlox.bloxArray, FossBlox.grid, FossBlox.direction );
+	Foss2D.fixGrid( FossBlox.bloxArray, FossBlox.grid );
+	
 };
 
 function optionMenu( tFrame ) {
