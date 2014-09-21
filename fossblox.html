@@ -8,8 +8,30 @@
 </head>
 <body>
 	<canvas id="canvas" width="480" height="854" style="border: 1px solid #bbb;"></canvas>
-	<section id="playButton">
-		<button type="button">Play</play>
+	<section id="mainMenu">
+		<p>
+			<button type="button" id="playButton">Play</button>
+		</p>
+		<p>
+			<button type="button" id="optionsButton">Options</button>
+		</p>
+	</section>
+	<section id="optionsMenu">
+		<p>
+			<label for="speedSlider">Falling Speed</label>
+			<input id="speedSlider" type="range" min="1" max="5" step="1" value="1"/>
+		</p>
+		<p>
+			<label for="frequencySlider">Blox Spawn Frequency</label>
+			<input id="frequencySlider" type="range" min="1" max="5" step="1" value="1"/>
+		</p>
+		<p>
+			<label for="musicCheckbox">Toggle Music</label>
+			<input type="checkbox" id="musicCheckbox">
+		</p>
+		<p>
+			<button type="button" id="resumeButton">Resume</button>
+		</p>
 	</section>
 </body>
 </html>
