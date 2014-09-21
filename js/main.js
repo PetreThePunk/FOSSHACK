@@ -12,8 +12,8 @@ function init() {
 		stateFunction: gameScreen,
 		bloxArray: [],
 		grid: {
-			rows: 25,
-			columns: 25,
+			rows: 9,
+			columns: 16,
 			cells: []
 		},
 		direction: 0
@@ -75,7 +75,7 @@ function render() {
 			
 			for( var i = 0; i < FossBlox.bloxArray.length; i++ ) {
 				var drawX = ( FossBlox.bloxArray[i].cell % FossBlox.grid.columns )* bloxWidth;
-				var drawY = ( FossBlox.bloxArray[i].cell / FossBlox.grid.rows ) * bloxHeight;
+				var drawY = Math.floor( FossBlox.bloxArray[i].cell / FossBlox.grid.columns ) * bloxHeight;
 				
 				console.log( );
 				

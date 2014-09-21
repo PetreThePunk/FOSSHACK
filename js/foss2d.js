@@ -24,8 +24,8 @@ var Foss2D = {
 					break;
 				case 1:
 					for(var cell = bloxArray[i].cell;
-					    (cell % grid.columns) == 0;
-					    cell++) {
+					    (cell % grid.columns) > 0;
+					    cell++) { 				
 						if( grid.cells[cell] == -1 ) {
 							falling = true;
 						}
@@ -42,7 +42,7 @@ var Foss2D = {
 					break;
 				case 3:
 					for(var cell = bloxArray[i].cell;
-					    (cell % grid.columns) == 0;
+					    (cell % grid.columns) > 0;
 					    cell--) {
 						if( grid.cells[cell] == -1 ) {
 							falling = true;
