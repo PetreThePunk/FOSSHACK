@@ -25,8 +25,8 @@ function init() {
 	}
 	
 	//test case
-	FossBlox.bloxArray.push( { falling: true, cell: 0 }, { falling: true, cell: 1 }, { falling: true, cell: 2 }, { falling: true, cell: 26 }, { falling: true, cell: 51 } );
-	
+	//FossBlox.bloxArray.push( { falling: true, cell: 0 }, { falling: true, cell: 1 }, { falling: true, cell: 2 }, { falling: true, cell: 26 }, { falling: true, cell: 51 } );
+	FossBlox.bloxArray.push( { falling: true, cell: 1 } );
 	// Set up canvas element and context
 	canvas = document.querySelector("#canvas");
 	ctx = canvas.getContext("2d");
