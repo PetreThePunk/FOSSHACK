@@ -10,7 +10,48 @@ var Foss2D = {
 	collide: function( bloxArray, grid, direction ) {
 		
 		for( var i = 0; i < bloxArray.length; i++ ) {
-		
+			var falling = false;
+			switch( direction ) {		
+
+				case 0:
+					for(var cell = bloxArray[i].cell;
+                                            cell < grid.cells.length && falling == false; 
+                                            cell += grid.columns) {
+						if( grid.cells[cell] == -1 ) {
+							falling = true;
+						}
+					}
+					break;
+				case 1:
+					for(var cell = bloxArray[i].cell;
+					    (cell % grid.columns) == 0;
+					    cell++) {
+						if( grid.cells[cell] == -1 ) {
+							falling = true;
+						}
+					} 
+					break;
+				case 2:
+					for(var cell = bloxArray[i].cell;
+					    cell > grid.cells.length && falling == false;
+					    cell -= grid.columns) {
+						if( grid.cells[cell] == -1 ) {
+							falling = true;
+						}
+					}
+					break;
+				case 3:
+					for(var cell = bloxArray[i].cell;
+					    (cell % grid.columns) == 0;
+					    cell--) {
+						if( grid.cells[cell] == -1 ) {
+							falling = true;
+						}
+					}
+					break;
+
+				arrayBlox[i].falling = falling;
+			}
 		}
 	},
 	/** Moves each blox in the proper direction if they are falling
