@@ -1,14 +1,14 @@
 {
-  "name": "My App",
-  "description": "My elevator pitch goes here",
+  "name": "FOSSBLOX",
+  "description": "Free and open source fun on a Flame.",
   "launch_path": "/index.html",
   "icons": {
     "512": "/img/icon-512.png",
     "128": "/img/icon-128.png"
   },
   "developer": {
-    "name": "Your name or organization",
-    "url": "http://your-homepage-here.org"
+    "name": "Team Weeseeks",
+    "url": "https://github.com/PetreThePunk/FOSSHACK"
   },
   "default_locale": "en"
 }
