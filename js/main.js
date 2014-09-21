@@ -4,6 +4,7 @@ var FossBlox, canvas, ctx;
 var tFrame = new Date();
 var startTime = new Date();
 var currentTime = startTime;
+var droptime = 0;
 // Come on its an init function
 function init() {
 	//Setting up all of the game globals for FossBlox
@@ -62,12 +63,21 @@ function init() {
 function update( tFrame ) { 
 	
 	var time = new Date();
-	var timeVal = time - startTime;
-	if( timeVal > 500) {
+	var timeVal = time - currentTime;
+	if( timeVal > 300 ) {
 		FossBlox.stateFunction( tFrame );
-		startTime = time;
+		currentTime = time;
 	}
 	
+	if(droptime >= 200) {
+	
+		
+		FossBlox.bloxArray.push( { falling: true, cell: 8, color: "purple" }, { falling: true, cell: 7, color: "blue" }, { falling: true, cell: 9, color: "orange" } );
+		
+		
+		droptime = 0;
+	}	
+	droptime++;
 };
 
 /** Checks the state and renders the screen appropriately(I CANT SPELL)

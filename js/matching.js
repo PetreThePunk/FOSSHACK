@@ -1,9 +1,10 @@
 var toRemove = [];
-function checkForMatches() {
-	if( FossBlox.state == "gameScreen" ) {
-		var checked = [];
-		var grid = FossBlox.grid;
+var checked = [];
 		
+function checkForMatches( FossBlox ) {
+	if( FossBlox.state == "gameScreen" ) {
+
+		var grid = FossBlox.grid;
 		for( var i = 0; i < grid.columns * grid.rows; i++ ) {
 			var alreadyChecked = alreadyCheckedAt( i );
 			
