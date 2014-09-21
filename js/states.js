@@ -8,14 +8,14 @@ function gameScreen( tFrame ) {
 	
 	Foss2D.applyPhysics( FossBlox.bloxArray, FossBlox.grid, FossBlox.direction );
 	
-	var stuff = checkForMatches( FossBlox);
+	/*var stuff = checkForMatches( FossBlox);
 	if(stuff !== 0) {
 	
 		for( var i = 0; i < stuff.length; i++) {
 			FossBlox.bloxArray =  FossBlox.bloxArray.splice( grid.cells[stuff[i]], 1);
 			console.log('h');
 		}
-	}
+	}*/
 	
 	Foss2D.fixGrid( FossBlox.bloxArray, FossBlox.grid );
 	
