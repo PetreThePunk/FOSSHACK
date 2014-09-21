@@ -1,6 +1,6 @@
+var toRemove = [];
 function checkForMatches() {
 	if( FossBlox.state == "gameScreen" ) {
-		var toRemove = [];
 		var checked = [];
 		var grid = FossBlox.grid;
 		
@@ -8,13 +8,20 @@ function checkForMatches() {
 			var alreadyChecked = alreadyCheckedAt( i );
 			
 			if( !alreadyChecked ) {
-				var matchedBlox = 0;
+				toRemove.push( i );
+				var matchedBlox = 1;
 				
 				matchedBlox += checkMatchesAt( i );
+				if( matchedBlox >= 3 ) {
+					return toRemove;
+				}
+				else {
+					toRemove.length = 0;
+				}
 			}
 		}
 		
-		return toRemove;
+		return 0;
 	}
 };
 
@@ -51,6 +58,7 @@ function checkMatchesAt( i ) {
 					
 					if( leftBloxColor == bloxColor ) {
 						leftBloxMatch = true;
+						toRemove.push( bloxCell - 1 );
 						matchedBlox++;
 						matchedBlox += checkMatchesAt( bloxCell - 1 );
 					}
@@ -67,6 +75,7 @@ function checkMatchesAt( i ) {
 					
 					if( rightBloxColor == bloxColor ) {
 						rightBloxMatch = true;
+						toRemove.push( bloxCell + 1 );
 						matchedBlox++;
 						matchedBlox += checkMatchesAt( bloxCell + 1 );
 					}
@@ -83,6 +92,7 @@ function checkMatchesAt( i ) {
 					
 					if( upBloxColor == bloxColor ) {
 						upBloxMatch = true;
+						toRemove.push( bloxCell - grid.columns );
 						matchedBlox++;
 						matchedBlox += checkMatchesAt( bloxCell - grid.columns );
 					}
@@ -99,6 +109,7 @@ function checkMatchesAt( i ) {
 					
 					if( downBloxColor == bloxColor ) {
 						downBloxMatch = true;
+						toRemove.push( bloxCell + grid.columns );
 						matchedBlox++;
 						matchedBlox += checkMatchesAt( bloxCell + grid.columns );
 					}
