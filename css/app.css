@@ -29,3 +29,10 @@ p {
   margin-top: -600px;
 }
 
+#gameOver{
+  display: none;
+  position: absolute;
+  margin-left: 210px;
+  margin-top: -300px;
+}
+
