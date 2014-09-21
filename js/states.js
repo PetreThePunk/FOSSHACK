@@ -4,7 +4,8 @@ function mainMenu( tFrame ) {
 
 function gameScreen( tFrame ) {
 	console.log( "game" );
-	
+	Foss2D.collide( FossBlox.bloxArray, grid, direction );
+	Foss2D.applyPhysics( FossBlox.bloxArray, grid, direction );
 };
 
 function optionMenu( tFrame ) {

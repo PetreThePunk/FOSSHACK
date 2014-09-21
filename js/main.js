@@ -5,7 +5,11 @@ var FossBlox = {
 	state: "mainMenu",
 	stateFunction: mainMenu,
 	bloxArray: [],
-	grid: [],
+	grid: {
+		rows: 10,
+		columns: 10,
+		cells: []
+	},
 	height: 20,
 	width: 30,
 	direction: 0
