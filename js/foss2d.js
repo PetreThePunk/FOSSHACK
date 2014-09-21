@@ -9,6 +9,9 @@ var Foss2D = {
 	 */
 	collide: function( bloxArray, grid, direction ) {
 		
+		for( var i = 0; i < bloxArray.length; i++ ) {
+		
+		}
 	},
 	/** Moves each blox in the proper direction if they are falling
 	 *
@@ -38,21 +41,21 @@ var Foss2D = {
 					case 1: 
 						blox.x += 1;
 						grid.cells[blox.cell] = -1;
-						blox.cell += grid.columns;
+						blox.cell += 1;
 						grid.cells[blox.cell] = i;
 						break;
 					// Up
 					case 2: 
 						blox.y -= 1;
 						grid.cells[blox.cell] = -1;
-						blox.cell -= grid.rows;
+						blox.cell -= grid.columns;
 						grid.cells[blox.cell] = i;
 						break;
 					// Left
 					case 3: 
 						blox.x -= 1;
 						grid.cells[blox.cell] = -1;
-						blox.cell -= grid.rows;
+						blox.cell -= 1;
 						grid.cells[blox.cell] = i;
 						break;
 				}
