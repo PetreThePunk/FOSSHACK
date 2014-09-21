@@ -3,8 +3,10 @@
   "description": "Free and open source fun on a Flame.",
   "launch_path": "/index.html",
   "icons": {
-    "512": "/img/icon-512.png",
-    "128": "/img/icon-128.png"
+    "16": "/img/icons/icon16x16.png",
+    "48": "/img/icons/icon48x48.png",
+    "60": "/img/icons/icon60x60.png",
+    "128": "/img/icons/icon128x128.png"
   },
   "developer": {
     "name": "Team Weeseeks",
