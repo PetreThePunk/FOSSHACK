@@ -24,7 +24,8 @@ function init() {
 		FossBlox.grid.cells[i] = -1;
 	}
 	
-	FossBlox.bloxArray.push( { falling: true, cell: 20 } );
+	//test array case
+	FossBlox.bloxArray.push( { falling: true, cell: 0 }, { falling: true, cell: 1 }, { falling: true, cell: 2 }, { falling: true, cell: 26 } );
 	
 	// Set up canvas element and context
 	canvas = document.querySelector("#canvas");
@@ -56,7 +57,9 @@ function render() {
 			
 			for( var i = 0; i < FossBlox.bloxArray.length; i++ ) {
 				var drawX = ( FossBlox.bloxArray[i].cell % FossBlox.grid.columns )* bloxWidth;
-				var drawY = ( FossBlox.bloxArray[i].cell % FossBlox.grid.rows ) * bloxHeight;
+				var drawY = ( FossBlox.bloxArray[i].cell / FossBlox.grid.rows ) * bloxHeight;
+				
+				console.log( );
 				
 				ctx.fillStyle = "white";
 				ctx.fillRect( drawX, drawY, bloxWidth, bloxHeight );

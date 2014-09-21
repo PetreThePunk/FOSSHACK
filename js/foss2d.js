@@ -49,9 +49,8 @@ var Foss2D = {
 						}
 					}
 					break;
-
-				bloxArray[i].falling = falling;
 			}
+			bloxArray[i].falling = falling;
 		}
 	},
 	/** Moves each blox in the proper direction if they are falling
