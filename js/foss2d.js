@@ -65,36 +65,32 @@ var Foss2D = {
 	
 		for( var i = 0; i < bloxArray.length; i++ ) {
 		
-			var currentBlox = bloxArray[i];
+			var blox = bloxArray[i];
 			
-			if( currentBlox.falling ) {
+			if( blox.falling ) {
 				//Each case advances the blox one spot on the grid in the current direction of gravity
 				switch( direction ) {
 					// Directions relative to initial orientation
 					// Down
 					case 0: 
-						blox.y += 1;
 						grid.cells[blox.cell] = -1;
 						blox.cell += grid.columns;
 						grid.cells[blox.cell] = i;
 						break;
 					// Right
 					case 1: 
-						blox.x += 1;
 						grid.cells[blox.cell] = -1;
 						blox.cell += 1;
 						grid.cells[blox.cell] = i;
 						break;
 					// Up
 					case 2: 
-						blox.y -= 1;
 						grid.cells[blox.cell] = -1;
 						blox.cell -= grid.columns;
 						grid.cells[blox.cell] = i;
 						break;
 					// Left
 					case 3: 
-						blox.x -= 1;
 						grid.cells[blox.cell] = -1;
 						blox.cell -= 1;
 						grid.cells[blox.cell] = i;

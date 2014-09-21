@@ -3,9 +3,9 @@ function mainMenu( tFrame ) {
 };
 
 function gameScreen( tFrame ) {
-	console.log( "game" );
 	Foss2D.collide( FossBlox.bloxArray, FossBlox.grid, FossBlox.direction );
 	Foss2D.applyPhysics( FossBlox.bloxArray, FossBlox.grid, FossBlox.direction );
+	
 };
 
 function optionMenu( tFrame ) {

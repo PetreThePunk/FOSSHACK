@@ -1,21 +1,37 @@
 "use strict";
 //Globals for FossBlox Game
-var FossBlox = {
-	stopMain: "undefined",
-	state: "mainMenu",
-	stateFunction: gameScreen,
-	bloxArray: [],
-	grid: {
-		rows: 10,
-		columns: 10,
-		cells: []
-	},
-	height: 20,
-	width: 30,
-	direction: 0
-};
-
+var FossBlox, canvas, ctx;
 var tFrame = 0;
+
+// Come on its an init function
+function init() {
+	//Setting up all of the game globals for FossBlox
+	FossBlox = {
+		stopMain: "undefined",
+		state: "gameScreen",
+		stateFunction: gameScreen,
+		bloxArray: [],
+		grid: {
+			rows: 25,
+			columns: 25,
+			cells: []
+		},
+		direction: 0
+	};
+	
+	// Set up an empty grid
+	for( var i = 0; i < FossBlox.grid.rows * FossBlox.grid.columns; i++ ) {
+		FossBlox.grid.cells[i] = -1;
+	}
+	
+	FossBlox.bloxArray.push( { falling: true, cell: 20 } );
+	
+	// Set up canvas element and context
+	canvas = document.querySelector("#canvas");
+	ctx = canvas.getContext("2d");
+	
+	main(); // start the cycle
+};
 
 /** Calls the current stateFunction
  *
@@ -26,8 +42,27 @@ function update( tFrame ) {
 	FossBlox.stateFunction( tFrame );
 };
 
+/** Checks the state and renders the screen appropriately(I CANT SPELL)
+ *
+ */
 function render() {
-	
+	switch( FossBlox.state ) {
+		case "gameScreen" :
+			ctx.fillStyle = "black";
+			ctx.fillRect( 0, 0, canvas.width, canvas.height );
+		
+			var bloxWidth = canvas.width/FossBlox.grid.columns;
+			var bloxHeight = canvas.height/FossBlox.grid.rows;
+			
+			for( var i = 0; i < FossBlox.bloxArray.length; i++ ) {
+				var drawX = ( FossBlox.bloxArray[i].cell % FossBlox.grid.columns )* bloxWidth;
+				var drawY = ( FossBlox.bloxArray[i].cell % FossBlox.grid.rows ) * bloxHeight;
+				
+				ctx.fillStyle = "white";
+				ctx.fillRect( drawX, drawY, bloxWidth, bloxHeight );
+			}
+			break;
+	}
 };
 
 function main() {
@@ -37,4 +72,4 @@ function main() {
 	render();
 };
 
-main(); // Start the cycle
+window.onload = init;
