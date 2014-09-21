@@ -5,7 +5,6 @@ function mainMenu( tFrame ) {
 function gameScreen( tFrame ) {
 	Foss2D.collide( FossBlox.bloxArray, FossBlox.grid, FossBlox.direction );
 	Foss2D.applyPhysics( FossBlox.bloxArray, FossBlox.grid, FossBlox.direction );
-	
 };
 
 function optionMenu( tFrame ) {

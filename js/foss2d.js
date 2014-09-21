@@ -1,9 +1,5 @@
 
 var Foss2D = {
-	cellToRowColumn: function( cell, grid ) {
-		
-		
-	},
 	/** Checks for blox that have reached the "bottom" and sets their falling attribute to false
 	 *
 	 * @param bloxArray : array of bloxen to check collisions on
@@ -27,33 +23,43 @@ var Foss2D = {
 					}
 					break;
 				case 1:
-					for(var cell = bloxArray[i].cell;
-					    (cell % grid.columns) > 0;
-					    cell++) { 				
-						if( grid.cells[cell] == -1 ) {
+					var pos = bloxArray[i].cell;
+					var col = pos % grid.columns;
+					var row = Math.floor( pos / grid.columns );
+					
+					for(var cell = col; cell < grid.columns; cell++) { 				
+						if( grid.cells[pos] == -1 ) {
 							falling = true;
 							break;
 						}
+						pos++;
 					} 
 					break;
 				case 2:
 					for(var cell = bloxArray[i].cell;
-					    cell > 0 && falling == false;
+					    cell >= 0 && falling == false;
 					    cell -= grid.columns) {
 						if( grid.cells[cell] == -1 ) {
+							console.log(pos);
 							falling = true;
 						}
 					}
 					break;
 				case 3:
-					for(var cell = bloxArray[i].cell;
-					    (cell % grid.columns) > 0;
-					    cell--) {
-						if( grid.cells[cell] == -1 ) {
+					var pos = bloxArray[i].cell;
+					var col = pos % grid.columns;
+					var row = Math.floor( pos / grid.columns );
+				
+					for(var cell = col; cell >= 0; cell--) {
+						console.log(pos);
+						if( grid.cells[pos] == -1 ) {
 							falling = true;
 							break;
 						}
+						pos--;
 					}
+					
+					
 					break;
 			}
 			bloxArray[i].falling = falling;
@@ -67,7 +73,7 @@ var Foss2D = {
 	 *
 	 */
 	applyPhysics: function( bloxArray, grid, direction ) {
-	
+		
 		for( var i = 0; i < bloxArray.length; i++ ) {
 		
 			var blox = bloxArray[i];
