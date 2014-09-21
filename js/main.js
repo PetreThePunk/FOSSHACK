@@ -1,8 +1,9 @@
 "use strict";
 //Globals for FossBlox Game
 var FossBlox, canvas, ctx;
-var tFrame = 0;
-
+var tFrame = new Date();
+var startTime = new Date();
+var currentTime = startTime;
 // Come on its an init function
 function init() {
 	//Setting up all of the game globals for FossBlox
@@ -59,7 +60,14 @@ function init() {
  *
  */
 function update( tFrame ) { 
-	FossBlox.stateFunction( tFrame );
+	
+	var time = new Date();
+	var timeVal = time - startTime;
+	if( timeVal > 500) {
+		FossBlox.stateFunction( tFrame );
+		startTime = time;
+	}
+	
 };
 
 /** Checks the state and renders the screen appropriately(I CANT SPELL)
