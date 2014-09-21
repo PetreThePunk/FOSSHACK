@@ -40,6 +40,7 @@ var Foss2D = {
 					    cell >= 0 && falling == false;
 					    cell -= grid.columns) {
 						if( grid.cells[cell] == -1 ) {
+							console.log(pos);
 							falling = true;
 						}
 					}
@@ -72,7 +73,7 @@ var Foss2D = {
 	 *
 	 */
 	applyPhysics: function( bloxArray, grid, direction ) {
-	
+		
 		for( var i = 0; i < bloxArray.length; i++ ) {
 		
 			var blox = bloxArray[i];
